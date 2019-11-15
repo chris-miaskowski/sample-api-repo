@@ -1,0 +1,20 @@
+title: Flow Chart
+type: object
+x-examples:
+  example-1: {}
+properties:
+  id:
+    type: string
+  text:
+    type: number
+  name:
+    type: string
+    format: date
+  title:
+    type: string
+  option:
+    type: array
+    items:
+      type: object
+required:
+  - name

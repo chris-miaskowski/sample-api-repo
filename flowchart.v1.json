@@ -1,0 +1,80 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "flowchart",
+    "version": "1.0"
+  },
+  "servers": [
+    {
+      "url": "http://localhost:3000"
+    }
+  ],
+  "paths": {
+    "/flowchart/{id}": {
+      "get": {
+        "summary": "Your GET endpoint",
+        "tags": [],
+        "requestBody": {},
+        "parameters": [
+          {
+            "schema": {
+              "type": "string"
+            },
+            "in": "query",
+            "name": "sort",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "./models/flow-chart.v1.yaml"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "API Key - 1": []
+          }
+        ]
+      },
+      "parameters": [
+        {
+          "schema": {
+            "type": "string"
+          },
+          "name": "id",
+          "in": "path",
+          "required": true
+        }
+      ]
+    }
+  },
+  "components": {
+    "securitySchemes": {
+      "API Key - 1": {
+        "type": "oauth2",
+        "flows": {
+          "password": {
+            "tokenUrl": "",
+            "refreshUrl": "",
+            "scopes": []
+          },
+          "implicit": {
+            "authorizationUrl": "",
+            "refreshUrl": "",
+            "scopes": []
+          }
+        }
+      }
+    }
+  }
+}
